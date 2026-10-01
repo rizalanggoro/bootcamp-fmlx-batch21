@@ -16,5 +16,5 @@ for (var a = 0; a < count; a++)
     Console.Write(a < count - 1 ? $"{num} + " : $"{num} = {calc.Sum()}\n");
 }
 
-var foobar = new FooBar(); 
-Console.WriteLine(foobar.Generate(15)); 
+var foobar = new FooBar();
+Console.WriteLine(foobar.Generate(15));

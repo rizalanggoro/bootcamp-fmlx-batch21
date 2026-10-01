@@ -1,29 +1,26 @@
-namespace MyLib
+namespace MyLib;
+
+public class FooBar
 {
-    class FooBar
+    public string Generate(int n)
     {
-        private string _result = "";
+        string result = "";
 
-        private void AppendResult(string val, int index, int count)
+        for (int i = 1; i <= n; i++)
         {
-            _result += index < count ? $"{val}, " : val;
+            string val;
+            if (i % 3 == 0 && i % 5 == 0)
+                val = "foobar";
+            else if (i % 3 == 0)
+                val = "foo";
+            else if (i % 5 == 0)
+                val = "bar";
+            else
+                val = i.ToString();
+
+            result += i < n ? val + ", " : val;
         }
 
-        public string Generate(int count)
-        {
-            for (int a = 1; a < (count + 1); a++)
-            {
-                if (a % 3 == 0 && a % 5 == 0)
-                    AppendResult("foobar", a, count);
-                else if (a % 3 == 0)
-                    AppendResult("foo", a, count);
-                else if (a % 5 == 0)
-                    AppendResult("bar", a, count);
-                else
-                    AppendResult(a.ToString(), a, count);
-            }
-
-            return _result;
-        }
+        return result;
     }
 }

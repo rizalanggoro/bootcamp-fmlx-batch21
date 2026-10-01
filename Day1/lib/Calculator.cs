@@ -1,29 +1,28 @@
-namespace MyLib
+namespace MyLib;
+
+public class Calculator
 {
-    public class Calculator
+    public int Sum(params int[] nums)
     {
-        public int Sum(params int[] nums)
+        var total = 0;
+        foreach (var a in nums)
         {
-            var total = 0;
-            foreach (var a in nums)
-            {
-                total += a;
-            }
-
-            return total;
+            total += a;
         }
 
-        private int[] _tempNumbers = [];
+        return total;
+    }
 
-        public void AddForSum(int num)
-        {
-            Array.Resize(ref _tempNumbers, _tempNumbers.Length + 1);
-            _tempNumbers[_tempNumbers.Length - 1] = num;
-        }
+    private int[] _tempNumbers = [];
 
-        public int Sum()
-        {
-            return _tempNumbers.Sum();
-        }
+    public void AddForSum(int num)
+    {
+        Array.Resize(ref _tempNumbers, _tempNumbers.Length + 1);
+        _tempNumbers[_tempNumbers.Length - 1] = num;
+    }
+
+    public int Sum()
+    {
+        return _tempNumbers.Sum();
     }
 }
