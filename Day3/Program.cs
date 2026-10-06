@@ -70,7 +70,8 @@ stack.Push(5);
 stack.Push(10);
 Console.WriteLine($"generic stack: {stack.Pop()}, {stack.Pop()}");
 
-var x = 5; var y = 10;
+var x = 5;
+var y = 10;
 Gen.Util.Swap(ref x, ref y);
 Console.WriteLine($"generic swap: {x}, {y}");
 Console.WriteLine($"generic max: {Gen.Util.Max(3, 7)}");
@@ -80,3 +81,13 @@ mstack.Push(new Gen.Money(5));
 mstack.Push(new Gen.Money(10));
 Console.WriteLine($"money stack: {mstack.Pop()}, {mstack.Pop()}");
 Console.WriteLine($"money max: {Gen.Util.Max(new Gen.Money(5), new Gen.Money(10))}");
+
+
+Console.WriteLine("---------- Singleton Demo ----------");
+var singleton1 = Classes.SingletonCounter.Instance;
+singleton1.Increment();
+singleton1.Increment();
+
+var singleton2 = Classes.SingletonCounter.Instance;
+Console.WriteLine($"singleton counter value: {singleton2.CounterValue}");
+Console.WriteLine($"singleton memory address: {singleton1.GetHashCode()} - {singleton2.GetHashCode()}");
