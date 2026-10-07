@@ -1,11 +1,11 @@
-﻿namespace Week01LinkedList;
+﻿namespace Week01LinkedList.Lib;
 
-internal class MyLinkedList
+internal class LinkedList : ILinkedList
 {
     private Node? _head;
     private Node? _tail;
 
-    internal void Append(int num)
+    public void Append(int num)
     {
         if (_head == null && _tail == null)
         {
@@ -28,7 +28,7 @@ internal class MyLinkedList
         Console.WriteLine($"Appended {num}");
     }
 
-    internal void Print()
+    public void Print()
     {
         if (_head == null)
         {

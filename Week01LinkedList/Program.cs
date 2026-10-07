@@ -1,8 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using Week01LinkedList;
+using Week01LinkedList.Lib;
 
-var myLinkedList = new MyLinkedList();
+var myLinkedList = new LinkedList();
 
 // empty state
 myLinkedList.Print();
