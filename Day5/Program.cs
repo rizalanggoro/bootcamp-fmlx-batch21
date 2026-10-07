@@ -1,3 +1,3 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using Delegate = Day5.Delegate;
 
-Console.WriteLine("Hello, World!");
+new Delegate.Index().Invoke();
