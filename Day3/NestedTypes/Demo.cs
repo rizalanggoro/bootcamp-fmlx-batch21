@@ -48,3 +48,27 @@ public class SubTopLevel : TopLevel
         }
     }
 }
+
+internal class TestTop
+{
+    internal class Inner
+    {
+        internal string Name = "hello world";
+
+        internal enum Color
+        {
+            R,
+            G,
+            B
+        }
+    }
+}
+
+internal class DemoNested
+{
+    private void Main()
+    {
+        var name = new TestTop.Inner().Name;
+        var color = TestTop.Inner.Color.R;
+    }
+}

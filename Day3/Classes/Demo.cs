@@ -55,10 +55,26 @@ internal class Demo5
     internal string Name { get; }
 }
 
+internal class TestNullClass
+{
+}
+
+internal class TestInit
+{
+    public string Name = "";
+}
+
 internal class Program1
 {
     private static void Index()
     {
+        TestInit testInit = new() { Name = "hello world" };
+
+        TestNullClass? testNullClass = null;
+        if (testNullClass == null)
+        {
+        }
+
         var demo4 = new Demo4("");
 
         var demo31 = new Demo3("John", "Doe");
