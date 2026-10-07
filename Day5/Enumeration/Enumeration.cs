@@ -6,9 +6,23 @@ public class Enumeration
 {
     public void Invoke()
     {
-        Console.WriteLine("---------- Enumeration ----------");
+        {
+            Console.WriteLine("---------- Enumeration ----------");
 
-        foreach (var item in new Counter(10)) Console.WriteLine($"item: {item}");
+            foreach (var item in new Counter(10)) Console.WriteLine($"item: {item}");
+        }
+
+        {
+            Console.WriteLine("---------- Iterator ----------");
+            foreach (var even in EvenOnly(10)) Console.WriteLine($"even number: {even}");
+        }
+    }
+
+    private IEnumerable<int> EvenOnly(int count)
+    {
+        for (var i = 1; i < count + 1; i++)
+            if (i % 2 == 0)
+                yield return i;
     }
 
     private class Counter(int toNumber) : IEnumerable<int>
