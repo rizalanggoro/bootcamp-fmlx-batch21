@@ -1,13 +1,15 @@
-namespace Week01Stack;
+﻿namespace Week01Stack.Lib;
 
-public class MyStack
+internal class FixedTypingHistory : ITypingHistory
 {
+    private const int MaxHistorySize = 100;
+    private readonly string[] _data = new string[MaxHistorySize];
+
     private int _count;
-    private readonly string[] _data = new string[32];
 
     public void Type(string word)
     {
-        if (_count == _data.Length)
+        if (_count == MaxHistorySize)
         {
             Console.WriteLine("Stack is full");
             return;
@@ -15,6 +17,7 @@ public class MyStack
 
         _data[_count] = word;
         _count++;
+
         Console.WriteLine($"Typed {word}");
     }
 
@@ -27,7 +30,7 @@ public class MyStack
         }
 
         _count--;
-        var word = _data[_count];
-        Console.WriteLine($"Undid {word}");
+
+        Console.WriteLine($"Undid {_data[_count]}");
     }
 }
