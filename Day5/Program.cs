@@ -2,8 +2,9 @@
 using EventHandler = Day5.EventHandler;
 using TryStatements = Day5.TryStatements.TryStatements;
 using Enumeration = Day5.Enumeration.Enumeration;
+using OperatorOverloading = Day5.OperatorOverloading.OperatorOverloading;
 
-var runIndex = 3;
+var runIndex = 5;
 switch (runIndex)
 {
     case 0:
@@ -20,5 +21,9 @@ switch (runIndex)
 
     case 3:
         new Enumeration().Invoke();
+        break;
+
+    case 5:
+        new OperatorOverloading().Invoke();
         break;
 }

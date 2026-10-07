@@ -9,7 +9,6 @@
 
     <ItemGroup>
         <Folder Include="NullableValueTypes\"/>
-        <Folder Include="OperatorOverloading\"/>
     </ItemGroup>
 
 </Project>
