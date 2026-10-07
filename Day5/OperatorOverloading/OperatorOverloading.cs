@@ -14,6 +14,9 @@ public class OperatorOverloading
 
         var note4 = note1 + note2 + note3;
         Console.WriteLine(note4);
+
+        var note5 = note4 - note2;
+        Console.WriteLine(note5);
     }
 
     private class MyNote(string content)
@@ -23,6 +26,16 @@ public class OperatorOverloading
         public static MyNote operator +(MyNote a, MyNote b)
         {
             return new MyNote(Strings.Join([a._content, b._content]) ?? "");
+        }
+
+        public static MyNote operator -(MyNote a, MyNote b)
+        {
+            var contents = a._content.Split(" ");
+            var filteredContents = contents.Where(
+                item => item != b._content
+            );
+
+            return new MyNote(Strings.Join([..filteredContents]) ?? "");
         }
 
         public override string ToString()
