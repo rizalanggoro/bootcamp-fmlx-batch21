@@ -11,7 +11,6 @@
         <Folder Include="Enumeration\"/>
         <Folder Include="NullableValueTypes\"/>
         <Folder Include="OperatorOverloading\"/>
-        <Folder Include="TryStatements\"/>
     </ItemGroup>
 
 </Project>
