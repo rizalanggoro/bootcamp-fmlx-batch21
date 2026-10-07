@@ -9,7 +9,6 @@
 
     <ItemGroup>
         <Folder Include="Enumeration\"/>
-        <Folder Include="EventHandler\"/>
         <Folder Include="NullableValueTypes\"/>
         <Folder Include="OperatorOverloading\"/>
         <Folder Include="TryStatements\"/>
