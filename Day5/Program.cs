@@ -4,7 +4,7 @@ using TryStatements = Day5.TryStatements.TryStatements;
 using Enumeration = Day5.Enumeration.Enumeration;
 using OperatorOverloading = Day5.OperatorOverloading.OperatorOverloading;
 
-var runIndex = 6;
+var runIndex = 1;
 switch (runIndex)
 {
     case 0:

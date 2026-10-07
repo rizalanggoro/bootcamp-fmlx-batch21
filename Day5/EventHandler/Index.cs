@@ -9,7 +9,9 @@ public class Index
 
             var repo = new Repo();
 
-            repo.Completed += _repoCallback;
+            repo.Completed += (sender, status) =>
+                Console.WriteLine($"repo callback status: {status}");
+
             repo.DoSomething();
         }
 
@@ -23,11 +25,40 @@ public class Index
             calculator.Add(1.2, 2.3);
             calculator.Subtract(5.4, 3.2);
         }
+
+        {
+            Console.WriteLine("---------- Stock Price Callback ----------");
+
+            var repo = new StockPriceRepo();
+            repo.StockPriceChangedHandler += (oldPrice, newPrice) =>
+                Console.WriteLine(
+                    $"""
+                     Price changed!
+                      - old: {oldPrice}
+                      - new: {newPrice}
+                     """
+                );
+
+            for (var i = 0; i < 3; i++)
+                repo.TriggerPriceChanges();
+        }
     }
 
-    private void _repoCallback(object? sender, bool status)
+    private delegate void StockPriceChangedHandler(decimal oldPrice, decimal newPrice);
+
+    private class StockPriceRepo
     {
-        Console.WriteLine($"repo callback status: {status}");
+        private decimal _stockPrice = decimal.Zero;
+
+        internal void TriggerPriceChanges()
+        {
+            var randPrice = new Random().Next(0, 10) * 1_000;
+            StockPriceChangedHandler?.Invoke(_stockPrice, randPrice);
+
+            _stockPrice = randPrice;
+        }
+
+        internal event StockPriceChangedHandler? StockPriceChangedHandler;
     }
 
     private class Calculator
