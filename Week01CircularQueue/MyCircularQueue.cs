@@ -1,13 +1,13 @@
 ﻿namespace Week01CircularQueue;
 
-internal class MyCircularQueue
+internal class MyCircularQueue : ICircularQueue
 {
     private const int MaxBufferSize = 3;
 
     private readonly int[] _buffer = new int[MaxBufferSize];
     private int _bufferCount;
 
-    internal void Log(int num)
+    public void Log(int num)
     {
         if (_bufferCount == MaxBufferSize)
         {
@@ -20,7 +20,7 @@ internal class MyCircularQueue
         _bufferCount++;
     }
 
-    internal void Read()
+    public void Read()
     {
         if (_bufferCount == 0)
         {
@@ -36,7 +36,7 @@ internal class MyCircularQueue
         _bufferCount--;
     }
 
-    internal void Print()
+    public void Print()
     {
         Console.Write("Buffer: ");
 

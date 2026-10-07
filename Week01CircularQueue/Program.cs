@@ -2,21 +2,46 @@
 
 using Week01CircularQueue;
 
-var myCircularQueue = new MyCircularQueue();
+{
+    Console.WriteLine("---------- Circular Queue ----------");
+    var myCircularQueue = new MyCircularQueue();
 
-myCircularQueue.Log(1);
-myCircularQueue.Log(2);
-myCircularQueue.Log(3);
-myCircularQueue.Print();
+    myCircularQueue.Log(1);
+    myCircularQueue.Log(2);
+    myCircularQueue.Log(3);
+    myCircularQueue.Print();
 
-myCircularQueue.Log(4);
-myCircularQueue.Print();
+    myCircularQueue.Log(4);
+    myCircularQueue.Print();
 
-myCircularQueue.Read();
-myCircularQueue.Print();
+    myCircularQueue.Read();
+    myCircularQueue.Print();
 
-myCircularQueue.Log(5);
-myCircularQueue.Print();
+    myCircularQueue.Log(5);
+    myCircularQueue.Print();
 
-myCircularQueue.Read();
-myCircularQueue.Print();
+    myCircularQueue.Read();
+    myCircularQueue.Print();
+}
+
+{
+    Console.WriteLine("---------- Circular Queue List ----------");
+    var myCircularQueue = new MyCircularQueueList();
+
+    myCircularQueue.Log(1);
+    myCircularQueue.Log(2);
+    myCircularQueue.Log(3);
+    myCircularQueue.Print();
+
+    myCircularQueue.Log(4);
+    myCircularQueue.Print();
+
+    myCircularQueue.Read();
+    myCircularQueue.Print();
+
+    myCircularQueue.Log(5);
+    myCircularQueue.Print();
+
+    myCircularQueue.Read();
+    myCircularQueue.Print();
+}
