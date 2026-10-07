@@ -32,6 +32,16 @@ public class Index
         Console.WriteLine($"Hello {name}");
     }
 
+    private string MulticastMethod3()
+    {
+        return "multicast method 3";
+    }
+
+    private string MulticastMethod4()
+    {
+        return "multicast method 4";
+    }
+
     public void Invoke()
     {
         {
@@ -58,6 +68,16 @@ public class Index
             multi += MulticastMethod1;
 
             multi.Invoke();
+        }
+
+        {
+            Console.WriteLine("---------- Multicast Delegate with Return ----------");
+
+            MulticastDelegateWithReturn multi = MulticastMethod3;
+            multi += MulticastMethod4;
+            multi += MulticastMethod3;
+
+            Console.WriteLine($"return value: {multi.Invoke()}");
         }
 
         {
@@ -96,4 +116,6 @@ public class Index
     private delegate T Transformer<T>(T arg);
 
     private delegate void MulticastDelegate();
+
+    private delegate string MulticastDelegateWithReturn();
 }
