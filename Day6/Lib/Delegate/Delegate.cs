@@ -64,16 +64,34 @@ internal class Delegate
 
         internal decimal GetDiscount(decimal price, Role role)
         {
-            var transformers = new DiscountTransformer[]
+            var transformers1 = new DiscountTransformer[]
             {
                 CustomerDiscountPrice,
                 MemberDiscountPrice,
                 StudentDiscountPrice
             };
 
-            return transformers[(int)role](price);
+            var transformers2 = new[]
+            {
+                CustomerDiscountPrice,
+                MemberDiscountPrice,
+                StudentDiscountPrice
+            };
+
+            if (new Random().Next() % 2 == 0)
+                return transformers1[(int)role](price);
+
+            return transformers2[(int)role](price);
+        }
+
+        private void Test()
+        {
+            DiscountTransformer d1 = CustomerDiscountPrice;
+            var d2 = new DiscountTransformer2(d1);
         }
 
         private delegate decimal DiscountTransformer(decimal price);
+
+        private delegate decimal DiscountTransformer2(decimal price);
     }
 }
