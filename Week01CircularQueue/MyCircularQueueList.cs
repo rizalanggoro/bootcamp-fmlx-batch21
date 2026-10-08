@@ -9,7 +9,7 @@ public class MyCircularQueueList : ICircularQueue
     {
         if (_buffer.Count >= MaxBufferSize)
         {
-            Console.WriteLine("Buffer full");
+            Console.WriteLine("Buffer Full");
             return;
         }
 
@@ -21,7 +21,7 @@ public class MyCircularQueueList : ICircularQueue
     {
         if (_buffer.Count == 0)
         {
-            Console.WriteLine("Buffer empty");
+            Console.WriteLine("Buffer Empty");
             return;
         }
 
