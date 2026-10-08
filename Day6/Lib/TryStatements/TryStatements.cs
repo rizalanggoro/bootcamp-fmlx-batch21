@@ -1,4 +1,6 @@
-﻿namespace Day6.Lib.TryStatements;
+﻿using Day6.Lib.EventHandler;
+
+namespace Day6.Lib.TryStatements;
 
 internal class TryStatements
 {
@@ -14,6 +16,17 @@ internal class TryStatements
         result = DoDivision(1, 0);
         Console.WriteLine($"result: {result?.ToString() ?? "error"}");
     }
+
+    private void Test()
+    {
+        var user = new UserDto
+        {
+            Id = 1
+        };
+
+        Console.WriteLine($"User id: {user.Id}");
+    }
+
 
     private int? DoDivision(int num1, int num2)
     {
