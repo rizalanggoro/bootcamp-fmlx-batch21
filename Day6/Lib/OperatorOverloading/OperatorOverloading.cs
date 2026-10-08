@@ -23,6 +23,9 @@ internal class OperatorOverloading
         var a = 10;
         var newUser = (User)a;
         Console.WriteLine(newUser.ToString());
+
+        string? b = null;
+        Console.WriteLine(b?.Trim().Length);
     }
 
     private class User
