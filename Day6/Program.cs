@@ -1,4 +1,5 @@
 ﻿using Day6.Lib.Enumeration;
+using Day6.Lib.OperatorOverloading;
 using Day6.Lib.TryStatements;
 using Delegate = Day6.Lib.Delegate.Delegate;
 using EventHandler = Day6.Lib.EventHandler.EventHandler;
@@ -22,6 +23,10 @@ try
 
         case "enumeration":
             new Enumeration().Invoke();
+            break;
+
+        case "operator-overloading":
+            new OperatorOverloading().Invoke();
             break;
     }
 }
