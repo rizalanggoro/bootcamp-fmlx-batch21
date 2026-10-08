@@ -4,30 +4,36 @@ using TryStatements = Day5.TryStatements.TryStatements;
 using Enumeration = Day5.Enumeration.Enumeration;
 using OperatorOverloading = Day5.OperatorOverloading.OperatorOverloading;
 
-var runIndex = 1;
-switch (runIndex)
+if (args.Length == 0)
 {
-    case 0:
+    Console.WriteLine("run with argument -- <delegate>");
+    return;
+}
+
+var runType = args[0];
+switch (runType)
+{
+    case "delegate":
         new Delegate.Index().Invoke();
         break;
 
-    case 1:
+    case "event-handler":
         new EventHandler.Index().Invoke();
         break;
 
-    case 2:
+    case "try-statements":
         new TryStatements().Invoke();
         break;
 
-    case 3:
+    case "enumeration":
         new Enumeration().Invoke();
         break;
 
-    case 5:
+    case "operator-overloading":
         new OperatorOverloading().Invoke();
         break;
 
-    case 6:
+    case "event-handler-2":
         new EventHandler.DemoCallback().Invoke();
         break;
 }
