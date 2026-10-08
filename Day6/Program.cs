@@ -1,4 +1,5 @@
-﻿using Delegate = Day6.Lib.Delegate.Delegate;
+﻿using Day6.Lib.TryStatements;
+using Delegate = Day6.Lib.Delegate.Delegate;
 using EventHandler = Day6.Lib.EventHandler.EventHandler;
 
 try
@@ -12,6 +13,10 @@ try
 
         case "event-handler":
             new EventHandler().Invoke();
+            break;
+
+        case "try-statements":
+            new TryStatements().Invoke();
             break;
     }
 }
