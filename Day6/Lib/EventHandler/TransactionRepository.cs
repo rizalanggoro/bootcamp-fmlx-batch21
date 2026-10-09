@@ -1,6 +1,6 @@
 ﻿namespace Day6.Lib.EventHandler;
 
-internal sealed class TransactionRepository
+internal class TransactionRepository
 {
     private readonly List<Transaction> _transactions = [];
 
@@ -32,7 +32,7 @@ internal sealed class TransactionRepository
         OnTransactionChangedHandler(_transactions.ToArray());
     }
 
-    private void OnTransactionChangedHandler(Transaction[] transactions)
+    protected virtual void OnTransactionChangedHandler(Transaction[] transactions)
     {
         TransactionChangedHandler?.Invoke(transactions);
         TransactionChangedEventHandler?.Invoke(this, transactions);
