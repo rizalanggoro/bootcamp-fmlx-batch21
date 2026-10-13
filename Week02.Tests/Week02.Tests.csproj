@@ -21,6 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\Week02LinkedList\Week02LinkedList.csproj"/>
         <ProjectReference Include="..\Week02Queue\Week02Queue.csproj"/>
         <ProjectReference Include="..\Week02Stack\Week02Stack.csproj"/>
     </ItemGroup>
