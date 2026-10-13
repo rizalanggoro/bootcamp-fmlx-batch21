@@ -1,6 +1,8 @@
-namespace Week02Queue.Tests;
+using Week02Queue;
 
-public class MyQueueTests
+namespace Week02.Tests;
+
+public class QueueTest
 {
     [Fact]
     public void Enqueue_Normal()
