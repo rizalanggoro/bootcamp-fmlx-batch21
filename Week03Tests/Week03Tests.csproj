@@ -23,6 +23,7 @@
     <ItemGroup>
         <ProjectReference Include="..\Week03FooBar\Week03FooBar.csproj"/>
         <ProjectReference Include="..\Week03Queue\Week03Queue.csproj" />
+        <ProjectReference Include="..\Week03Stack\Week03Stack.csproj" />
     </ItemGroup>
 
 </Project>
